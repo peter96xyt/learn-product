@@ -1,0 +1,73 @@
+.main_pos_a{
+    position: absolute;
+}
+.pos_r_a{
+    top: 0;
+    right: 0;
+    width: 25%;
+}
+.say_hi{
+    /* position: fixed; */
+    padding: 10px;
+    background-color: white;
+    width: 100%;
+    height: 88px;
+    border-bottom: 1px solid grey;
+}
+.say_hi .p1{
+    color: #90949C;
+}
+.p_login{
+    color: #90949C;
+    padding: 10px;
+    margin-bottom: 0;
+    font-size: 15px;
+}
+.login_sty{
+    background-color: white;
+    border-top: 1px solid grey;
+    height: 39px;
+    position: relative;
+    padding: 5px;
+}
+.login_a1::before{
+    display: inline-block;
+    content: "";
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    margin: 0;
+    background-color: red;
+
+}
+.login_a2::before{
+    display: inline-block;
+    content: "";
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    margin: 0;
+    background-color: blue;
+
+}
+.login_a1,.login_a2{
+    text-decoration: none !important;
+    color:black;
+    font-size: 14px;
+    padding: 15px;
+    /*position: absolute;*/
+    /*top: 9px;*/
+}
+.login_a1:hover,.login_a2:hover{
+    color: black;
+}
+.contribute_p{
+    color: #90949C;
+    padding: 10px;
+    margin-bottom: 0;
+    font-size: 15px;
+}
+.contribute_img{
+    height: 147.36px;
+    width: 100%;
+}

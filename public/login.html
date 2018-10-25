@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <title>login</title>
+    <style>
+        body{background: #f6f6f6}
+        hr{margin: 0;}
+        .login_form{
+            width: 386px;
+            height: 400px;
+            position: absolute;
+            top: 180px;
+            left: 50%;
+            margin-left: -193px;
+            text-align: center;
+            background-color: #fff;
+            border: 2px solid black;
+            border-radius: 3px;;
+        }
+        .login_form h3{
+            font-size: 20px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        #login{
+            display: flex;
+            flex-direction: column;
+            padding: 30px 20px 0px 20px;
+        }
+        #login input,#login button{outline:none;}
+        .email,.pwd{
+            position: relative;
+        }
+        .email>img,.pwd>img{
+            position: absolute;
+            width: 24px;
+            height: 18px;
+            top:13.5px;
+            left: 8px;
+        }
+        .email input,.pwd input{
+            width: 346px;
+            height: 45px;
+            padding: 13px 10px 13px 35px;
+            box-sizing: border-box;
+            border: 1px solid darkgray;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        #login button{
+            margin-top: 10px;
+            width: 346px;
+            height: 42px;
+            padding: 14px;
+            font-size: 14px;
+            border: 1px solid dodgerblue;
+            background: dodgerblue;
+            color: #fff;
+            line-height: 14px;
+        }
+        .forget_pwd{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 0 20px;
+            margin-top: 20px;
+            font-size: 12px;
+        }
+        .forget_pwd a{
+            color:blue;
+            text-decoration: none;
+        }
+        .other_login{
+            padding: 20px;
+            font-size: 13px;
+        }
+        .other_login p{
+            margin: 20px 0 0 0;
+        }
+    </style>
+</head>
+<body>
+<!-- header -->
+<div id="header"></div>
+<div class=" login_form">
+    <h3>登录</h3>
+    <hr/>
+    <form id="login" method="post" action="/user/">
+        <span class="email">
+            <img src="img/email.png" alt=""/>
+            <input type="email" placeholder="邮箱" />
+        </span>
+        <span class="pwd">
+            <img src="img/password.png" alt=""/>
+            <input type="password" placeholder="密码"/>
+        </span>
+        <button type="submit">立刻登录</button>
+    </form>
+    <div class="forget_pwd">
+        <div class="f1">
+            忘记密码?
+            <a href=""><span>找回</span></a>
+        </div>
+        <div class="f2">
+            没有账号?
+            <a href="register.html"><span>注册</span></a>
+        </div>
+    </div>
+    <div class="other_login">
+        社交账号直接登录
+        <hr/>
+    <p>
+        <a href="#"><img src="img/qq.png" alt=""/></a>
+        <a href="#"><img src="img/weibo.png" alt=""/></a>
+        <a href="#"><img src="img/wechat.png" alt=""/></a>
+    </p>
+    </div>
+</div>
+<!--footer-->
+<div id="footer"></div>
+<script src="./js/header_ajax.js"></script>
+<script src="./js/footer_ajax.js"></script>
+</body>
+</html>

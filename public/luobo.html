@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+          *{
+            padding: 0;
+            margin: 0;
+        }
+        @font-face {
+            font-family: 'iconfont';  /* project id 208314 */
+            src: url('//at.alicdn.com/t/font_208314_2l9oi1sn4hmh1tt9.eot');
+            src: url('//at.alicdn.com/t/font_208314_2l9oi1sn4hmh1tt9.eot?#iefix') format('embedded-opentype'),
+            url('//at.alicdn.com/t/font_208314_2l9oi1sn4hmh1tt9.woff') format('woff'),
+            url('//at.alicdn.com/t/font_208314_2l9oi1sn4hmh1tt9.ttf') format('truetype'),
+            url('//at.alicdn.com/t/font_208314_2l9oi1sn4hmh1tt9.svg#iconfont') format('svg');
+        }
+        .slideImageContainer{
+            position: relative;
+            width: 600px;
+            height: 300px;
+            margin: 0 auto;
+            border: solid 1px red;
+            overflow: hidden;
+        }
+        .slideImageLists{
+            position: absolute;
+            left: -1800px;
+            top: 0;
+            width: 10000px;
+            height: 300px;
+        }
+        .slideImageLists img{
+            display: block;
+            width: 600px;
+            height: 300px;
+        }
+        .slideLeftBtn,.slideRightBtn{
+            position: absolute;
+            font-family: "iconfont";
+            font-size: 60px;
+            top: 120px;
+            color: #191f25;
+            opacity: 0.3;
+            cursor: pointer;
+
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+        .slideLeftBtn:hover,.slideRightBtn:hover{
+            opacity: 0.6;
+        }
+        .slideLeftBtn{
+            left: 10px;
+        }
+        .slideRightBtn{
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="slideImageContainer">
+    <div class="slideImageLists">
+        <img src="img/main_L_1.jpg" />
+        <img src="img/main_L_2.png" />
+        <img src="img/main_L_3.png" />
+        <img src="img/main_L_1.jpg" />
+        <img src="img/main_L_2.png" />
+        <img src="img/main_L_3.png" />
+        <img src="img/main_L_1.jpg" />
+        <img src="img/main_L_2.png" />
+        <img src="img/main_L_3.png" />
+    </div>
+    <div class="slideLeftBtn" id="slideLeftBtn">&#xe60f;</div>
+    <div class="slideRightBtn" id="slideRightBtn">&#xe60e;</div>
+</div>
+<script>
+    var slideIndex = 3;   //记录初始图片的下标( 默认最初展示第四张图片，下标从0开始，所以初始值为3 )
+    //左边按钮的点击事件
+    $("#slideLeftBtn").on("click",function(){
+        // 点击左按钮的时候想要显示当前图片的前一张，所以slideIndex值要减去1
+        slideIndex--;
+        // animateLength表示想要让slideImageLists移动到什么位置，slideImageLists 的位置由 left属性来控制
+        var animateLength = slideIndex * (-600) + "px";
+        $(".slideImageLists").animate({"left":animateLength},"slow",function(){
+            // animate的回调函数(即执行完动画之后才会执行函数里面的内容)
+            if(slideIndex <= 0){
+                $(".slideImageLists").css({"left":"-1800px"});
+                slideIndex = 3;
+            }
+        });
+    })
+    //右边按钮的点击事件
+    $("#slideRightBtn").on("click",function(){
+        // 点击右按钮的时候想要显示当前图片的后一张，所以slideIndex值要加上1
+        slideIndex++;
+        var animateLength = slideIndex * (-600) + "px";
+        $(".slideImageLists").animate({"left":animateLength},"slow",function(){
+            if(slideIndex >= 6){
+                $(".slideImageLists").css({"left":"-1800px"});
+                slideIndex = 3;
+            }
+        })
+    })
+
+    var isClickable = true;   // 是否可点击，默认可点击
+    var slideIndex = 3;
+    $("#slideLeftBtn").on("click",function(){
+        if(isClickable == true){
+            slideIndex--;
+        }else{
+            return false;
+        }
+        isClickable = false;
+        var animateLength = slideIndex * (-600) + "px";
+        $(".slideImageLists").animate({"left":animateLength},"slow",function(){
+            isClickable = true;
+            if(slideIndex <= 0){
+                $(".slideImageLists").css({"left":"-1800px"});
+                slideIndex = 3;
+            }
+        });
+    })
+</script>
+</body>
+</html>

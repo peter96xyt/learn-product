@@ -1,0 +1,38 @@
+#image{
+    width:100%;
+    position:relative;
+    overflow:hidden;
+}
+#img-list{
+    width:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    list-style:none;
+}
+#img-list li{
+    width:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    opacity:0;
+}
+#img-list li:nth-child(1){
+    opacity:1;
+}
+#pre-btn{
+    width:50px;
+    height:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:10;
+}
+#next-btn{
+    width:50px;
+    height:100%;
+    position:absolute;
+    right:0;
+    top:0;
+    z-index:10;
+}
