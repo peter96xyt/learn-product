@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <title>register</title>
+    <style>
+        body{background: #f6f6f6}
+        hr{margin: 0;}
+        .register_form{
+            width: 386px;
+            height: 455px;
+            position: absolute;
+            top: 180px;
+            left: 50%;
+            margin-left: -193px;
+            text-align: center;
+            background-color: #fff;
+            border: 2px solid black;
+            border-radius: 3px;;
+        }
+        .register_form h3{
+            font-size: 20px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        .register{
+            display: flex;
+            flex-direction: column;
+            padding: 30px 20px 0px 20px;
+        }
+        .register input,.register button{outline:none;}
+        .un,.email,.pwd{
+            position: relative;
+        }
+        .un>img,.email>img,.pwd>img{
+            position: absolute;
+            width: 24px;
+            height: 18px;
+            top:13.5px;
+            left: 8px;
+        }
+        .un input,.email input,.pwd input{
+            width: 346px;
+            height: 45px;
+            padding: 13px 98px 13px 35px;
+            box-sizing: border-box;
+            border: 1px solid darkgray;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .register button{
+            margin-top: 10px;
+            width: 346px;
+            height: 42px;
+            padding: 14px;
+            font-size: 14px;
+            border: 1px solid dodgerblue;
+            background: dodgerblue;
+            color: #fff;
+            line-height: 14px;
+        }
+        .forget_pwd{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 0 20px;
+            margin-top: 20px;
+            font-size: 12px;
+        }
+        .forget_pwd a{
+            color:blue;
+            text-decoration: none;
+        }
+        .other_login{
+            padding: 20px;
+            font-size: 13px;
+        }
+        .other_login p{
+            margin: 20px 0 0 0;
+        }
+        .input_word{
+            position: absolute;
+            top: 11px;
+            right: 10px;
+            font-size: 12px;
+            color: darkgray;
+        }
+    </style>
+</head>
+<body>
+<!-- header -->
+<div id="header"></div>
+<div class=" register_form">
+    <h3>注册</h3>
+    <hr/>
+    <form class="register" method="post" action="/user/add">
+        <span class="un">
+            <img src="img/un.png" alt=""/>
+            <input  id="uname" type="text" placeholder="昵称"/>
+            <span class="input_word">支持中文、英文</span>
+        </span>
+        <span class="email">
+            <img src="img/email.png" alt=""/>
+            <input id="uemail" type="email" placeholder="邮箱" />
+            <span class="input_word">用作登录</span>
+        </span>
+        <span class="pwd">
+            <img src="img/password.png" alt=""/>
+            <input id="upwd"  type="password" placeholder="密码"/>
+            <span class="input_word">6位以上</span>
+        </span>
+        <button type="submit">提交注册</button>
+    </form>
+    <div class="forget_pwd">
+        <div class="f1">
+            忘记密码?
+            <a href=""><span>找回</span></a>
+        </div>
+        <div class="f2">
+            已有账号?
+            <a href="login.html"><span>登录</span></a>
+        </div>
+    </div>
+    <div class="other_login">
+        社交账号直接登录
+        <hr/>
+        <p>
+            <a href="#"><img src="img/qq.png" alt=""/></a>
+            <a href="#"><img src="img/weibo.png" alt=""/></a>
+            <a href="#"><img src="img/wechat.png" alt=""/></a>
+        </p>
+    </div>
+</div>
+<!--footer-->
+<div id="footer"></div>
+
+<script src="./js/header_ajax.js"></script>
+<script src="./js/footer_ajax.js"></script>
+<script>
+//    var $uname = $("#register #uname");
+//    if($uname.innerHTML>10){$uname.css("color","red")}
+</script>
+</body>
+</html>
